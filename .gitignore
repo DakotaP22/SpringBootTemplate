@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### devcontainers ###
+### run "git config --global core.autocrlf input" if opening dev containers marks files a Modified ###
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
