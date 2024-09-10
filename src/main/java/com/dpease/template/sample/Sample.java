@@ -1,5 +1,8 @@
 package com.dpease.template.sample;
 
+import com.dpease.template.sample.dto.CreateSampleDTO;
+import com.dpease.template.sample.dto.UpdateSampleDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,4 +23,13 @@ public class Sample {
     private Long id;
     
     private String details;
+
+    public Sample(CreateSampleDTO dto) {
+        this.details = dto.getDetails();
+    }
+
+    public Sample(UpdateSampleDTO dto) {
+        this.details = dto.getDetails();
+    }
+    
 }
