@@ -22,8 +22,8 @@ public class GlobalControllerAdvice {
     // #endregion
 
     // #region 500
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<String> handleKnownRuntimeException(RuntimeException e) {
+    @ExceptionHandler(ServiceException.class)
+    public ResponseEntity<String> handleServiceExceptions(ServiceException e) {
         logger.error(e.getMessage(), e.getCause());
         return ResponseEntity.internalServerError().body(e.getMessage());
     }
