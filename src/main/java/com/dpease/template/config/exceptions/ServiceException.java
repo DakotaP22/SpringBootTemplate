@@ -1,4 +1,4 @@
-package com.dpease.template.config;
+package com.dpease.template.config.exceptions;
 
 
 public class ServiceException extends Exception {

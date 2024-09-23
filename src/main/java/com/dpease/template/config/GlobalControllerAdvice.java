@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
+import com.dpease.template.config.exceptions.ServiceException;
 import jakarta.persistence.EntityNotFoundException;
 
 @ControllerAdvice
