@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dpease.template.sample.dto.SampleDTO;
-
 
 @RestController
 @RequestMapping("/samples")
@@ -24,9 +22,9 @@ public class SampleController {
     private SampleService sampleSvc;
 
     @PostMapping
-    public ResponseEntity<Sample> create(@RequestBody SampleDTO dto) {
-        Sample sample = sampleSvc.create(dto);
-        return ResponseEntity.ok().body(sample);
+    public ResponseEntity<Sample> create(@RequestBody Sample sample) {
+        Sample createdSample = sampleSvc.create(sample);
+        return ResponseEntity.ok().body(createdSample);
     }
     
     @GetMapping("/{id}")
@@ -36,9 +34,9 @@ public class SampleController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Sample> update(@PathVariable Long id, @RequestBody SampleDTO dto) {
-        Sample sample = sampleSvc.update(id, dto);
-        return ResponseEntity.ok().body(sample);
+    public ResponseEntity<Sample> update(@PathVariable Long id, @RequestBody Sample sample) {
+        Sample updatedSample = sampleSvc.update(id, sample);
+        return ResponseEntity.ok().body(updatedSample);
     }
 
     @DeleteMapping("/{id}")
