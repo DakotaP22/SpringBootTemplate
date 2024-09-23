@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dpease.template.sample.dto.CreateSampleDTO;
-import com.dpease.template.sample.dto.UpdateSampleDTO;
+import com.dpease.template.sample.dto.SampleDTO;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -18,7 +17,7 @@ public class SampleService {
     private SampleRepository sampleRepository;
 
 
-    public Sample create(CreateSampleDTO dto) {
+    public Sample create(SampleDTO dto) {
         Sample sample = new Sample(dto);
         Sample saved = sampleRepository.save(sample);
         return saved;
@@ -29,7 +28,7 @@ public class SampleService {
         return sample;
     }
 
-    public Sample update(Long id, UpdateSampleDTO dto) {
+    public Sample update(Long id, SampleDTO dto) {
         Sample saved = sampleRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No Sample entities with ID=" + id));
         saved.setDetails(dto.getDetails());
         Sample updated = sampleRepository.save(saved);

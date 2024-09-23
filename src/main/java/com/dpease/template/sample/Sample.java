@@ -1,7 +1,6 @@
 package com.dpease.template.sample;
 
-import com.dpease.template.sample.dto.CreateSampleDTO;
-import com.dpease.template.sample.dto.UpdateSampleDTO;
+import com.dpease.template.sample.dto.SampleDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,12 +23,7 @@ public class Sample {
     
     private String details;
 
-    public Sample(CreateSampleDTO dto) {
+    public Sample(SampleDTO dto) {
         this.details = dto.getDetails();
     }
-
-    public Sample(UpdateSampleDTO dto) {
-        this.details = dto.getDetails();
-    }
-    
 }
